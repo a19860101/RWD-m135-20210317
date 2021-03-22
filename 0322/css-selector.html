@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: #ba64f8;
+        }
+        a {
+            color: #301b3f;
+        }
+        .abc {
+            color:chartreuse;
+        }
+        /* 
+            選取器命名規範
+            1. 只能使用 英文、底線開頭
+            2. 符號只可使用 _ -
+        */
+        #xyz {
+            color:crimson;
+        }
+        /* 
+            權重
+            id > class > tag
+
+            物以稀為貴
+            指向的元素越少，權重越重
+        */
+    </style>
+</head>
+<body>
+    <h1 class="abc">title</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio illo cum aut! Voluptates, mollitia rerum dolorem amet asperiores atque at, vitae vero quos tenetur odio sapiente magni eos. Minima, id!</p>
+    <a href="#">link</a>
+    <h1 id="xyz">hello</h1>
+    <h1>hello</h1>
+    <h1 class="abc">hello</h1>
+</body>
+</html>
