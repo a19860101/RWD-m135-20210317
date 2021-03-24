@@ -10,17 +10,23 @@
             font-family: "Gill Sans MT";
         }
         body {
-            background-color: aquamarine;
-            background-image: url("https://picsum.photos/id/64/1400/1300");
-            background-repeat: no-repeat;
+            /* background-color: aquamarine; */
+            /* background-image: url("https://picsum.photos/id/64/1400/1300"); */
+            /* background-repeat: no-repeat; */
             /* repeat, no-repeat, repeat-x, repeat-y */
             
             /* background-position: 100px 200px; */
-            background-position: center;
+            /* background-position: center; */
 
-            background-attachment: fixed;
-            background-size: cover;
+            /* background-attachment: fixed; */
+            /* background-size: cover; */
             /* contain, cover */
+
+            background: aquamarine no-repeat  fixed  center / cover;
+            background-image: 
+                repeating-linear-gradient(90deg,rgba(0,0,0,0.5) 0px, rgba(0,0,0,0.5) 1px, transparent 1px , transparent 2px),
+                url("https://picsum.photos/id/64/1400/1300");
+;
         }
     </style>
 </head>
