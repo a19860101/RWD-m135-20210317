@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            font-size: 0;
+        }
+        .box {
+            width: 200px;
+            background-color: #aaa;
+            padding: 15px;
+
+            display: inline-block;
+
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        /* 
+            inline-block 問題 -> 元素之間的空隙
+            解決步驟
+                1. 將父元素的文字大小設定為0
+                2. 將自己的文字還原
+                3. 設定垂直對齊
+        
+         */
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sed vero, vitae assumenda blanditiis alias aliquam quibusdam atque hic mollitia aspernatur quis nobis. Cupiditate dolores cum asperiores ab, error vel.</p>
+        </div>
+        <div class="box">
+            <h2>title</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sed vero, vitae assumenda blanditiis alias aliquam quibusdam atque hic mollitia aspernatur quis nobis. Cupiditate dolores cum asperiores ab, error vel.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sed vero, vitae assumenda blanditiis alias aliquam quibusdam atque hic mollitia aspernatur quis nobis. Cupiditate dolores cum asperiores ab, error vel.
+            </p>
+        </div>
+        <div class="box">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetupsum dolor sit amet consectetupsum dolor sit amet consectetu psum dolor sit amet consectetur adipisicing elit. Voluptatum sed vero, vitae assumenda blanditiis alias aliquam quibusdam atque hic mollitia aspernatur quis nobis. Cupiditate dolores cum asperiores ab, error vel.</p>
+        </div>
+                
+    </div>
+</body>
+</html>
