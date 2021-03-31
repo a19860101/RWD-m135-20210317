@@ -1,0 +1,17 @@
+/*CSS RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Segoe UI";
+    box-sizing: border-box;
+}
+ul,ol,li {
+    list-style: none;
+}
+img {
+    width: 100%;
+}
+.w-100 {
+    width: 100%;
+}
