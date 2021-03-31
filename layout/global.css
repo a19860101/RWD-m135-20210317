@@ -1,3 +1,7 @@
+:root {
+    --orange: #ffd000;
+    --blue: #00b4fb;
+}
 /*CSS RESET*/
 * {
     margin: 0;
@@ -15,6 +19,28 @@ img {
 .w-100 {
     width: 100%;
 }
+/* Button*/
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ccc;
+    color: #000;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+.btn-orange {
+    background-color: var(--orange);
+    color: #222;
+}
+.btn-blue {
+    background-color: var(--blue);
+    color: #222;
+}
+.btn-dark {
+    background-color: #222;
+    color: #eee;
+}
+
 
 /* text-align */
 .t-left {text-align: left;}
