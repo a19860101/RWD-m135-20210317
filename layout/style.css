@@ -30,3 +30,25 @@ header {
 header h1 {
     font-size: 100px
 }
+/* section-title 每一個區塊的標題與標語 */
+.section-title {
+    margin-bottom: 30px;
+}
+.section-title h2 {
+    font-size: 36px;
+    text-align: center;
+}
+.section-title p {
+    font-size: 20px;
+    text-align: center;
+}
+/* About */
+#about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about-content p{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}

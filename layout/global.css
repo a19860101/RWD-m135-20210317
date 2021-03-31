@@ -15,3 +15,9 @@ img {
 .w-100 {
     width: 100%;
 }
+
+/* text-align */
+.t-left {text-align: left;}
+.t-center {text-align: center;}
+.t-right {text-align: right;}
+.t-justify {text-align: justify;}
