@@ -69,3 +69,18 @@ input[type="text"],textarea {
 label {
     display: inline-block;
 }
+/* footer */
+footer {
+    background: #222;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+footer a {
+    color: #eee;
+    text-decoration: none;
+}
+/* copyright */
+#copyright {
+    color: #eee;
+    background-color: #333;
+}
