@@ -47,3 +47,16 @@ img {
 .t-center {text-align: center;}
 .t-right {text-align: right;}
 .t-justify {text-align: justify;}
+
+
+
+/* pull push */
+.push-6 {
+    position: relative;
+    left: calc(100% / 12 * 6);
+}
+.pull-6 {
+    position: relative;
+    right: calc(100% / 12 * 6);
+}
+
