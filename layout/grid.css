@@ -46,6 +46,9 @@
 [class^="col-"]{
     padding: 15px;
 }
+.no-padding > [class^="col-"]{
+    padding: 0;
+}
 /* 
     ^= 開頭是
     *= 包含
