@@ -17,6 +17,8 @@ ul,ol,li {
 }
 img {
     width: 100%;
+    vertical-align: top;
+    /* display: block; */
 }
 .w-100 {
     width: 100%;
