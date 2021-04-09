@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #00c3a9;
+
+            /* animation:flyOut 1s 0s infinite alternate ease-out; */
+            /* animation-name: flyOut; */
+            /* animation-duration: 1s; */
+            /* animation-delay: 0s; */
+            /* animation-fill-mode: forwards; */
+            /* animation-iteration-count: infinite; */
+            
+            /* animation-direction: reverse; */
+            /* normal, reverse, alternate, alternate-reverse */
+            
+            /* animation-timing-function: ease; */
+            /* ease, ease-in, ease-out, ease-in-out, linear */
+
+            /* animation: shake .2s infinite ease-in-out; */
+
+        }
+        .box:hover {
+            /* animation: fadeOut 1s forwards; */
+            animation: shake .1s infinite;
+        }
+
+        @keyframes flyIn {
+            from {transform: translateX(-100%);}
+        }
+        @keyframes flyOut {
+            to {transform: translateX(100%);opacity: 0;}
+        }
+        @keyframes fly {
+            from {transform: translateX(-100%);}
+            to {transform: translateX(300%)}
+        }
+        @keyframes move {
+            0% {}
+            25% {transform: translateX(300px)translateY(0);}
+            50% {transform: translateX(300px)translateY(300px);}
+            75% {transform: translateX(0)translateY(300px);}
+            100% {transform: translateX(0)translateY(0);}
+        }
+        @keyframes shake {
+            0% {transform: translateX(-50px);}
+            50% {transform: translateX(50px);}
+            100% {transform: translateX(-50px);}
+        }
+
+        @keyframes fadeOut {
+            to {opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

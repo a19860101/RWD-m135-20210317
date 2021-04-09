@@ -13,6 +13,21 @@ nav a {
     margin: 0 15px;
 }
 
+nav .collapse a::after {
+    content:"";
+    display: block;
+    border-bottom: 3px solid #ffd900;
+    position: relative;
+    top: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: .3s;
+}
+
+nav .collapse a:hover::after {
+    transform: scaleX(1);
+}
+
 /* Header */
 header {
     background-image: url("https://picsum.photos/id/20/1200/600");
@@ -83,4 +98,17 @@ footer a {
 #copyright {
     color: #eee;
     background-color: #333;
+}
+
+
+/* 動畫 */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+}
+.fadeIn {
+    animation: fadeIn 1s;
 }

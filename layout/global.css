@@ -35,14 +35,28 @@ img {
 .btn-orange {
     background-color: var(--orange);
     color: #222;
+
+    transition: .3s
+}
+.btn-orange:hover{
+    filter:brightness(1.1);
 }
 .btn-blue {
     background-color: var(--blue);
     color: #222;
+    transition: .3s
+}
+.btn-blue:hover {
+    filter:brightness(1.2);
 }
 .btn-dark {
     background-color: #222;
     color: #eee;
+    transition: .3s;
+}
+.btn-dark:hover {
+    /* filter: brightness(2); */
+    filter:invert();
 }
 
 
