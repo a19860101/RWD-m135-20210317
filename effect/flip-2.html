@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 300px;
+            position: relative;
+
+            perspective: 800px;
+        }
+        .front {
+            width: 100%;
+            height: 100%;
+            background-color: #f30a57;
+
+            position: absolute;
+            transition: 1s;
+
+            transform-origin: left;
+            opacity: 1;
+        }
+        .back {
+            width: 100%;
+            height: 100%;
+            background-color: #31b6df;
+
+            position: absolute;
+            transform: rotateY(270deg);
+            backface-visibility: hidden;
+
+            transition: 1s;
+            transform-origin: left;
+            opacity: 0;
+        }
+        .card:hover .front {
+            transform: rotateY(45deg);
+            opacity: 0;
+        }
+        .card:hover .back {
+            transform: rotateY(360deg);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="front">FRONT</div>
+        <div class="back">BACK</div>
+    </div>
+</body>
+</html>
