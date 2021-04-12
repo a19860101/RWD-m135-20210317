@@ -49,6 +49,7 @@
 }
 [class^="col-"]{
     padding: 15px;
+    position: relative;
 }
 .no-padding > [class^="col-"]{
     padding: 0;
