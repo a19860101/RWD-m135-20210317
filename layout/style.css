@@ -1,16 +1,20 @@
 /* Nav */
 nav {
-   height: 60px;
-   background-color: #222;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+    /* height: 60px; */
+    background-color: #222;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    flex-direction: column;
 }
 nav a {
     color: #fff;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     margin: 0 15px;
+
+    padding: 15px 0;
 }
 
 nav .collapse a::after {
@@ -28,6 +32,47 @@ nav .collapse a:hover::after {
     transform: scaleX(1);
 }
 
+nav .collapse {
+    display: none;
+}
+@media(min-width: 768px){
+    nav {
+        height: 60px;
+        background-color: #222;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-direction: row;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 15px;
+
+        padding: 0;
+    }
+
+    nav .collapse a::after {
+        content:"";
+        display: block;
+        border-bottom: 3px solid #ffd900;
+        position: relative;
+        top: 3px;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: .3s;
+    }
+
+    nav .collapse a:hover::after {
+        transform: scaleX(1);
+    }
+
+    nav .collapse {
+        display: block;
+    }
+}
 /* Header */
 header {
     background-image: url("https://picsum.photos/id/20/1200/600");
@@ -47,11 +92,9 @@ header h1 {
 }
 .section-title h2 {
     font-size: 36px;
-    text-align: center;
 }
 .section-title p {
     font-size: 20px;
-    text-align: center;
 }
 /* About */
 #about {
