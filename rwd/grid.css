@@ -53,15 +53,9 @@
 .no-padding > [class^="col-"]{
     padding: 0;
 }
-@media(min-width: 600px){
+@media(min-width: 625px){
     .container {
         width: 600px;
-        margin: auto;
-    }
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
     }
     .col-md-1 {
         flex:0 0 calc(100% / 12 * 1);
@@ -99,22 +93,10 @@
     .col-md-12 {
         flex:0 0 calc(100% / 12 * 12);
     }
-    [class^="col-"]{
-        padding: 15px;
-    }
-    .no-padding > [class^="col-"]{
-        padding: 0;
-    }
 }
 @media(min-width: 1200px){
     .container {
-        width: 1200px;
-        margin: auto;
-    }
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+        width: 1170px;
     }
     .col-lg-1 {
         flex:0 0 calc(100% / 12 * 1);
@@ -151,11 +133,5 @@
     }
     .col-lg-12 {
         flex:0 0 calc(100% / 12 * 12);
-    }
-    [class^="col-"]{
-        padding: 15px;
-    }
-    .no-padding > [class^="col-"]{
-        padding: 0;
     }
 }
