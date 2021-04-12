@@ -69,9 +69,9 @@ img {
 
 
 /* pull push */
-[class ^= "pu"] {
-    position: relative!important;
-}
+/* [class *= "pu"]{
+    position: relative;
+} */
 .push-0 {
     left:0;
 }
