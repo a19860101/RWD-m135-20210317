@@ -1,0 +1,3 @@
+將檔案複製到以下路徑即可
+
+C:\Users\User\AppData\Roaming\Code\User\snippets
