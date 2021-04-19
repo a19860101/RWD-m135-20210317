@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 運算子
+        let x = 100;
+        let y = 60;
+        
+        // 算術運算子
+
+        console.log(x + y); //100+60 = 160
+        console.log(x - y); //100-60 = 40
+        console.log(x * y); //100*60 = 6000
+        console.log(x / y); //100/60 = 1.666666...
+        console.log(x % y); //100/60 = 1 ... 40
+        console.log(x);
+        
+        // 比較運算子
+
+        let a = 100;
+        let b = '100';
+        console.log(x > y);
+        console.log(x >= y);
+        console.log(x < y);
+        console.log(x <= y);
+        console.log(a == b);
+        console.log(a === b);
+        console.log(x != y);
+
+        // 指定運算子
+        x = y
+        x += y // x = x + y
+        x -= y // x = x - y
+        x *= y // x = x * y
+        x /= y // x = x / y
+        x %= y // x = x % y
+        x += 10;
+        console.log(x);
+
+        console.log( x > 0 && y < 0);
+        console.log( x > 0 || y < 0);
+        console.log(!x);
+        
+        //字串樣板 es6
+
+        let score = 80;
+        let user = '王大明';
+
+        console.log(user + '你好，你的分數為' + score + '分');
+
+        console.log(`${user}你好，你的分數為${score}分`);
+        
+        
+        
+        
+    </script>
+</body>
+</html>
