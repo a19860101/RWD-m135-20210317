@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj = new Object();
+        // obj.name = 'test';
+        // obj.color = 'red';
+        // obj.size = 'Large';
+
+        // let obj = new Object({
+        //     name: 'test',
+        //     color: 'red',
+        //     size: 'Large'
+        // })
+
+        // let obj = {
+        //     name: 'test',
+        //     color: 'red',
+        //     size: 'Large'
+        // }
+        // console.log(obj);
+
+        // let user = {
+        //     name:'John',
+        //     mail:'john@gmail.com',
+        //     age: '18'
+        // }
+        // console.log(user);
+        // console.log(user.name);
+        // console.log(user.mail);
+        // console.log(user.age);
+
+        let users = [
+            {
+                id:1,
+                name:'John',
+                mail:'john@gmail.com'
+            },
+            {
+                id:2,
+                name:'mary',
+                mail:'mary@gmail.com'
+            },
+            {
+                id:3,
+                name:'ben',
+                mail:'ben@gmail.com'
+            },
+            {
+                id:4,
+                name:'Michelle',
+                mail:'Michelle@gmail.com'
+            },
+            {
+                id:5,
+                name:'Tim',
+                mail:'Tim@gmail.com'
+            },
+        ];
+        // console.log(users);
+        // console.log(users[0].name);
+        // console.log(users[0].mail);
+
+        for(let user of users){
+            console.log(user.id);
+            console.log(user.name);
+            console.log(user.mail);
+        }
+    </script>
+</body>
+</html>

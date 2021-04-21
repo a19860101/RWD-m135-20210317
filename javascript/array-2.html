@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let drinks = ['紅茶','綠茶','奶茶','珍珠奶茶','冰淇淋紅茶'];
+        let desserts = ['蛋塔','提拉米蘇'];
+        
+        drinks.push('梅子綠茶');
+        drinks.pop();
+        drinks.unshift('拿鐵');
+        drinks.shift();
+        // reverse 反轉陣列
+        // drinks.reverse();
+
+        // concat 合併陣列
+        // let meal = drinks.concat(desserts);
+        // let meal = desserts.concat(drinks);
+
+        // es6 合併
+        let meal = [...drinks,...desserts];
+        console.log(meal);
+
+        //splice 拼接
+        // drinks.splice(1,1,'茉莉綠茶');
+
+        //slice 切片 -> 產生新陣列
+        let drinks_slice = drinks.slice(2,4);
+        console.log(drinks_slice);
+
+        // split 分裂 字串->陣列
+        let str = 'HELLO_APPLE';
+        let str_array = str.split('');
+        console.log(str_array);
+        // join 加入 陣列->字串
+        let drinks_string = drinks.join('_');
+        console.log(drinks_string);
+
+        //toString 
+        let d_string = drinks.toString();
+        console.log(d_string);
+
+        for(let drink of drinks){
+            console.log(drink);
+        }
+    </script>
+</body>
+</html>
