@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery {
+            width: 650px;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+        }
+        .thumb {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div>
+            <img src="images/iphone-12-black-select-2020.png" class="picture">
+        </div>
+        <div class="thumbs">
+            <img src="images/iphone-12-black-select-2020.png" class="thumb">
+            <img src="images/iphone-12-blue-select-2020.png" class="thumb">
+            <img src="images/iphone-12-green-select-2020.png" class="thumb">
+            <img src="images/iphone-12-purple-select-2021.png" class="thumb">
+            <img src="images/iphone-12-red-select-2020.png" class="thumb">
+            <img src="images/iphone-12-white-select-2020.png" class="thumb">
+        </div>
+    </div>
+    <script>
+        let thumbs = Array.from(document.querySelectorAll('.thumb'));
+        for(let thumb of thumbs){
+            // thumb.onclick = function(e){
+            //     // console.log(e.target);
+            //     let src = e.target.src;
+            //     // let src = e.target.getAttribute('src');
+            //     console.log(src);
+            //     document.querySelector('.picture').setAttribute('src',src);
+            // }
+            thumb.onclick = function(){
+                console.log(this);
+                // let src = this.src;
+                let src = this.getAttribute('src');
+                document.querySelector('.picture').setAttribute('src',src);
+            }
+        }
+    </script>
+</body>
+</html>

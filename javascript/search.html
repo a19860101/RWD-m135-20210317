@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="search()">
+    <ul>
+        <li>熟成紅茶</li>
+        <li>麗春紅茶</li>
+        <li>太妃紅茶</li>
+        <li>雪藏紅茶</li>
+        <li>熟成冷露</li>
+        <li>雪花冷露</li>
+        <li>春芽冷露</li>
+        <li>春芽綠茶</li>
+        <li>春梅冰茶</li>
+        <li>冷露歐蕾</li>
+        <li>白玉歐蕾</li>
+        <li>熟成檸果</li>
+        <li>Latte</li>
+    </ul>
+    <script>
+        // function search(){
+        //     let search = document.querySelector('#search').value;
+        //     console.log(search);
+        //     let li = Array.from(document.querySelectorAll('li'));
+        //     for(let drink of li){
+        //         // console.log(drink.textContent);
+        //         if(drink.textContent.indexOf(search) > -1){
+        //             drink.style.display = '';
+        //         }else{
+        //             drink.style.display = 'none';
+        //         }
+        //     }
+        // }
+        function search(){
+            let search = document.querySelector('#search').value;
+            console.log(search);
+            let li = Array.from(document.querySelectorAll('li'));
+            for(let drink of li){
+                // console.log(drink.textContent);
+                if(drink.textContent.toUpperCase().indexOf(search.toUpperCase()) > -1){
+                    drink.style.display = '';
+                }else{
+                    drink.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

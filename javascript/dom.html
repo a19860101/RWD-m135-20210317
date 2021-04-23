@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">hello javascript</h1>
+        <p id="content">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto facere natus at repudiandae, ullam doloremque, eius enim sed harum non magni provident similique, corrupti aspernatur unde illum ipsum! Placeat, eligendi?
+        </p>
+        <ul class="list">
+            <li class="item">list 1</li>
+            <li class="item">list 2</li>
+            <li class="item">list 3</li>
+            <li class="item">list 4</li>
+            <li class="item">list 5</li>
+        </ul>
+    </div>
+    <script>
+        // let title = document.getElementById('title');
+        // console.log(title);
+        // let item = document.getElementsByClassName('item');
+        // console.log(item);
+        // let p = document.getElementsByTagName('p');
+        // console.log(p);
+
+        // let el = document.querySelector('#content');
+        // console.log(el);
+
+        // let els = document.querySelectorAll('li');
+        // console.log(els);
+
+        // let items = Array.from(document.getElementsByClassName('item'));
+        // let items = Array.from(document.querySelectorAll('.item'));
+        // let items = Array.from(item);
+        // console.log(items);
+        // for(let i=0;i<items.length;i++){
+        //     console.log(items[i]);
+        // }
+
+        // for(let item of items){
+        //     console.log(item);
+        // }
+
+        // for(let item in items){
+        //     console.log(items[item]);
+        // }
+
+        // items.forEach(function(item){
+        //     console.log(item);
+        // })
+
+        let title = document.querySelector('#title');
+        // title.style.color = 'red';
+        // title.textContent = '123';
+        // console.log(title.textContent);
+        let items = Array.from(document.querySelectorAll('.item'));
+        items[1].textContent = '000';
+        for(let item of items){
+            item.style.color = 'red';
+            // item.textContent = '321'
+        }
+    </script>
+</body>
+</html>
