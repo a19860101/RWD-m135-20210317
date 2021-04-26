@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <ul class="menu">
+
+        </ul>
+    </div>
     <script>
         let url = 'data.json';
         fetch(url)
@@ -14,7 +19,13 @@
             return response.json();
         })
         .then(function(data){
-            console.log(data);
+            for(let item of data){
+                // console.log(item.title);
+                let li = document.createElement('li');
+                li.append(item.title);
+                // console.log(li);
+                document.querySelector('.menu').append(li);
+            }
         })
     </script>
 </body>
