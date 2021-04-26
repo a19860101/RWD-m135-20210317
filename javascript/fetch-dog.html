@@ -17,19 +17,59 @@
     <script>
         let url = 'https://dog.ceo/api/breeds/image/random/5';
         fetch(url)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data.message);
+        .then(response => response.json())
+        .then(data => {
             for(let dog of data.message){
-                // console.log(dog);
                 let img = document.createElement('img');
                 img.setAttribute('src',dog);
-                console.log(img);
                 document.querySelector('.container').append(img);
             }
         })
+        // fetch(url)
+        // .then(function(response){
+        //     return response.json();
+        // })
+        // .then(function(data){
+        //     console.log(data.message);
+        //     for(let dog of data.message){
+        //         // console.log(dog);
+        //         let img = document.createElement('img');
+        //         img.setAttribute('src',dog);
+        //         console.log(img);
+        //         document.querySelector('.container').append(img);
+        //     }
+        // })
+
+        // let test = () => {
+        //     return 100;
+        // }
+        // let test = (x) => {
+        //     return x;
+        // }
+        // let test = x => {
+        //     return x;
+        // }
+
+        // let test = (x,y) => {
+        //     return x + y;
+        // }
+        
+        // let test = x => {
+        //     x += 10;
+        //     return x;
+        // }
+
+        let test = x => x*x ;
+
+        /* 
+            let test = function(x){
+                return x * x;
+            }
+            
+        */ 
+
+
+        console.log(test(888));
     </script>
 </body>
 </html>
