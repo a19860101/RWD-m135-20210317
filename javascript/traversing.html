@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">title</h1>
+        <p class="content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, id?
+        </p>
+        <div class="about">
+            <ul>
+                <li><a href="#">list 1</a></li>
+                <li><a href="#">list 2</a></li>
+                <li><a href="#">list 3</a></li>
+                <li><a href="#">list 4</a></li>
+            </ul>
+            <a href="#" class="more"> link</a>
+        </div>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, temporibus?
+        </p>
+
+    </div>
+    <script>
+        let content = document.querySelector('.content');
+        console.log(content);
+        //父元素 只會有一個
+        // console.log(content.parentElement);
+        //父節點
+        // console.log(content.parentNode);
+        //子元素
+        // console.log(content.children);
+        //子節點
+        // console.log(content.childNodes);
+        // 文字節點,註解節點,換行節點
+
+        //兄弟元素
+        console.log(content.nextElementSibling);
+        console.log(content.previousElementSibling);
+        //兄弟節點
+        console.log(content.nextSibling);
+        console.log(content.previousSibling);
+
+    </script>
+</body>
+</html>
