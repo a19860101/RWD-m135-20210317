@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}} {{num}}</h1>
+        <div>{{drinks}}</div>
+        <div v-for="drink,idx in drinks">{{drink}}-{{idx}}</div>
+        <div v-for="drink,idx of drinks">{{drink}}-{{idx}}</div>
+        <div>{{users.name}}</div>
+        <div>{{users.mail}}</div>
+        <div v-if="num > 10">熱賣中</div>
+        <div v-else-if="num > 0 && num < 10">低庫存</div>
+        <div v-else>補貨中</div>
+        <a v-bind:href="link">Google</a>
+        <a :href="link">Google</a>
+        <img :src="img" width="100">
+    </div>
+    <script>
+        Vue.createApp({
+            data:function(){
+                return {
+                    title:'Hello Vue',
+                    drinks:['紅茶','綠茶','奶茶','冰淇淋紅茶'],
+                    users:{
+                        name:'John',
+                        mail:'asdf@gmail.com'
+                    },
+                    num:60,
+                    link:'https://www.google.com',
+                    img: 'iphone.png'
+                }
+            }
+        }).mount('#app');
+
+    </script>
+</body>
+</html>

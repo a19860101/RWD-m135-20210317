@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <img :src="`images/${img}`" width="400">
+        <div>{{desc}}</div>
+        <ul>
+            <li v-for="product in products">{{product.colorName}}</li>
+        </ul>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    title: ' iPhone 12',
+                    img: 'iphone-12-black-select-2020.png',
+                    desc: '每位顧客限購 10 部紫色 iPhone 12 mini 與 10 部紫色 iPhone 12',
+                    products:[
+                        {
+                            id:1,
+                            img:'iphone-12-black-select-2020.png',
+                            colorName:'黑色',
+                            color:'#000'
+                        },
+                        {
+                            id:2,
+                            img:'iphone-12-blue-select-2020.png',
+                            colorName:'藍色',
+                            color:'blue'
+                        },
+                        {
+                            id:3,
+                            img:'iphone-12-green-select-2020.png',
+                            colorName:'綠色',
+                            color:'green'
+                        },
+                        {
+                            id:4,
+                            img:'iphone-12-purple-select-2021.png',
+                            colorName:'紫色',
+                            color:'#purple'
+                        },
+                        {
+                            id:5,
+                            img:'iphone-12-red-select-2020.png',
+                            colorName:'紅色',
+                            color:'red'
+                        },
+                        {
+                            id:6,
+                            img:'iphone-12-white-select-2020.png',
+                            colorName:'白色',
+                            color:'#fff'
+                        },
+                    ]
+                }
+            }
+        }).mount('#app');
+
+    </script>
+</body>
+</html>
