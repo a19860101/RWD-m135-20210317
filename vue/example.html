@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .color {
+            list-style: none;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -13,7 +23,12 @@
         <img :src="`images/${img}`" width="400">
         <div>{{desc}}</div>
         <ul>
-            <li v-for="product in products">{{product.colorName}}</li>
+            <li v-for="(product,idx) in products" 
+                class="color" 
+                :style="{backgroundColor:product.color}"
+                @click="changeColor(idx)"
+                >
+            </li>
         </ul>
     </div>
     <script>
@@ -46,7 +61,7 @@
                             id:4,
                             img:'iphone-12-purple-select-2021.png',
                             colorName:'紫色',
-                            color:'#purple'
+                            color:'purple'
                         },
                         {
                             id:5,
@@ -60,7 +75,14 @@
                             colorName:'白色',
                             color:'#fff'
                         },
+
                     ]
+                }
+            },
+            methods:{
+                changeColor(idx){
+                    console.log(this.products[idx].img);
+                    this.img = this.products[idx].img;
                 }
             }
         }).mount('#app');
