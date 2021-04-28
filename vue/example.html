@@ -30,6 +30,10 @@
                 >
             </li>
         </ul>
+        {{qty}}
+        <div v-if="qty > 10">熱賣中</div>
+        <div v-else-if="qty > 0 && qty <= 10">低庫存</div>
+        <div v-else>補貨中</div>
     </div>
     <script>
         Vue.createApp({
@@ -44,37 +48,43 @@
                             id:1,
                             img:'iphone-12-black-select-2020.png',
                             colorName:'黑色',
-                            color:'#000'
+                            color:'#000',
+                            qty: 10
                         },
                         {
                             id:2,
                             img:'iphone-12-blue-select-2020.png',
                             colorName:'藍色',
-                            color:'blue'
+                            color:'blue',
+                            qty:15
                         },
                         {
                             id:3,
                             img:'iphone-12-green-select-2020.png',
                             colorName:'綠色',
-                            color:'green'
+                            color:'green',
+                            qty:2
                         },
                         {
                             id:4,
                             img:'iphone-12-purple-select-2021.png',
                             colorName:'紫色',
-                            color:'purple'
+                            color:'purple',
+                            qty:0
                         },
                         {
                             id:5,
                             img:'iphone-12-red-select-2020.png',
-                            colorName:'紅色',
-                            color:'red'
+                            colorName:'(PRODUCT)紅色',
+                            color:'red',
+                            qty:13
                         },
                         {
                             id:6,
                             img:'iphone-12-white-select-2020.png',
                             colorName:'白色',
-                            color:'#fff'
+                            color:'#fff',
+                            qty:3
                         },
 
                     ]
@@ -92,11 +102,17 @@
                 }
             },
             computed:{
+                target(){
+                    return this.products[this.selectedIdx];
+                },
                 img(){
-                    return this.products[this.selectedIdx].img;
+                    return this.target.img;
                 },
                 colorName(){
-                    return this.products[this.selectedIdx].colorName;
+                    return this.target.colorName;
+                },
+                qty(){
+                    return this.target.qty;
                 }
             }
         }).mount('#app');
