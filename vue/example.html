@@ -35,6 +35,7 @@
         <div v-if="qty > 10">熱賣中</div>
         <div v-else-if="qty > 0 && qty <= 10">低庫存</div>
         <div v-else>補貨中</div>
+        <hr>
         <button @click="cart+=1" v-if="qty>0">加入購物車</button>
         <button disabled v-else>補貨中</button>
     </div>
