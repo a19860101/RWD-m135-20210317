@@ -19,14 +19,14 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{title}}</h1>
+        <h1>{{title}} {{colorName}}</h1>
         <img :src="`images/${img}`" width="400">
         <div>{{desc}}</div>
         <ul>
             <li v-for="(product,idx) in products" 
                 class="color" 
                 :style="{backgroundColor:product.color}"
-                @click="changeColor(idx)"
+                @click="changeIdx(idx)"
                 >
             </li>
         </ul>
@@ -36,8 +36,9 @@
             data(){
                 return {
                     title: ' iPhone 12',
-                    img: 'iphone-12-black-select-2020.png',
+                    // img: 'iphone-12-black-select-2020.png',
                     desc: '每位顧客限購 10 部紫色 iPhone 12 mini 與 10 部紫色 iPhone 12',
+                    selectedIdx:0,
                     products:[
                         {
                             id:1,
@@ -83,6 +84,19 @@
                 changeColor(idx){
                     console.log(this.products[idx].img);
                     this.img = this.products[idx].img;
+                },
+                changeIdx(idx){
+                    this.selectedIdx = idx;
+                    console.log(this.selectedIdx);
+                    // console.log(idx);
+                }
+            },
+            computed:{
+                img(){
+                    return this.products[this.selectedIdx].img;
+                },
+                colorName(){
+                    return this.products[this.selectedIdx].colorName;
                 }
             }
         }).mount('#app');
