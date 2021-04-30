@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-md-6" v-for="(product,idx) in products">
-                    <img src="images/iphone-12-black-select-2020.png" class="w-100">
+                    <img :src="`images/${product.image}`" class="w-100">
                     <h3>{{product.title}}</h3>
                     <div>{{product.price}}</div>
                     <a href="#" class="btn btn-primary">加入購物車</a>
@@ -65,25 +65,26 @@
                         {
                             id:1,
                             title: 'iPhone 12 Mini',
-                            price: '26900',
-                            image:''
+                            price: '23900',
+                            image:'iphone-12-mini-blue-select-2020.png'
                         },
                         {
-                            id:1,
+                            id:2,
                             title: 'iPhone 12',
                             price: '26900',
-                            image:''
+                            image:'iphone-12-black-select-2020.png'
                         },
                         {
-                            id:1,
+                            id:3,
                             title: 'iPhone 12 Pro',
-                            price: '26900',
-                            image:''
+                            price: '33900',
+                            image:'iphone-12-pro-blue-hero.png'
                         },
                         {
-                            id:1,
+                            id:4,
                             title: 'iPhone 12 Pro Max',
-                            price: '26900',
+                            price: '37900',
+                            image: 'iphone-12-pro-max-gold-hero.png'
 
                         },
                     ]
