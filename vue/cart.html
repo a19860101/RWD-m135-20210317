@@ -27,7 +27,30 @@
             top: -5px;
             font-size: 14px;
         }
-
+        .cartItems {
+            /* position: relative; */
+            display: none;
+        }
+        .cartItems.active {
+            display: block;
+        }
+        .cartItems-container {
+            position: fixed;
+            background-color: #fff;
+            width: 400px;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            padding: 30px;
+        }
+        .cartItems-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.8);
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 
@@ -80,16 +103,20 @@
             </div>
         </div>
         <div class="cartItems">
+            <div class="cartItems-overlay"></div>
+            <div class="cartItems-container">
+            <i class="fas fa-times-circle fa-2x cartItems-close"></i>
             <h3>購物車</h3>
-            <div v-for="(cartItem,idx) in cartItems" class="d-flex align-items-center px-5">
-                <button class="btn btn-danger btn-sm" @click="removeCartItem(idx)">移除</button>
-                <img :src="`images/${cartItem.image}`" width="80">
-                <h4>{{cartItem.title}}</h4>
-                <div class="ms-auto">${{cartItem.price}}</div>
+                <div v-for="(cartItem,idx) in cartItems" class="d-flex align-items-center px-5">
+                    <button class="btn btn-danger btn-sm" @click="removeCartItem(idx)">移除</button>
+                    <img :src="`images/${cartItem.image}`" width="80">
+                    <h4>{{cartItem.title}}</h4>
+                    <div class="ms-auto">${{cartItem.price}}</div>
+                </div>
+                <div>總金額: ${{cartPriceTotal}}</div>
+                <hr>
+                <a href="javascript:;" class="btn btn-danger" v-if="cartItems.length > 0" @click="clearCart()">清空購物車</a>
             </div>
-            <div>總金額: ${{cartPriceTotal}}</div>
-            <hr>
-            <a href="javascript:;" class="btn btn-danger" v-if="cartItems.length > 0" @click="clearCart()">清空購物車</a>
         </div>
     </div>
     
