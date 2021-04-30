@@ -52,7 +52,7 @@
                     <img :src="`images/${product.image}`" class="w-100">
                     <h3>{{product.title}}</h3>
                     <div>{{product.price}}</div>
-                    <a href="#" class="btn btn-primary" @click="addToCart(idx)">加入購物車</a>
+                    <a href="javascript:;" class="btn btn-primary" @click="addToCart(idx)">加入購物車</a>
                 </div>
             </div>
         </div>
@@ -63,6 +63,7 @@
                 <h4>{{cartItem.title}}</h4>
                 <div class="ms-auto">${{cartItem.price}}</div>
             </div>
+            <a href="javascript:;" class="btn btn-danger" v-if="cartItems.length > 0" @click="clearCart()">清空購物車</a>
         </div>
     </div>
     
@@ -104,6 +105,9 @@
             methods:{
                 addToCart(idx){
                     this.cartItems.push(this.products[idx]);
+                },
+                clearCart(){
+                    this.cartItems.length = 0;
                 }
             }
         }).mount('#app');
