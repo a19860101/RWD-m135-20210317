@@ -59,19 +59,22 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link cart">
                                 <i class="fas fa-shopping-cart fa-lg"></i>
-                                <span class="cartItemNum">0</span>
+                                <span class="cartItemNum">
+                                    {{cartItems.length}}
+                                </span>
                             </a>
                         </li>
                     </div>
                 </div>
             </div>
         </nav>
+       
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-md-6" v-for="(product,idx) in products">
                     <img :src="`images/${product.image}`" class="w-100">
                     <h3>{{product.title}}</h3>
-                    <div>{{product.price}}</div>
+                    <div>${{product.price}}</div>
                     <a href="javascript:;" class="btn btn-primary" @click="addToCart(idx)">加入購物車</a>
                 </div>
             </div>
@@ -84,6 +87,7 @@
                 <h4>{{cartItem.title}}</h4>
                 <div class="ms-auto">${{cartItem.price}}</div>
             </div>
+            <div>總金額: ${{cartPriceTotal}}</div>
             <hr>
             <a href="javascript:;" class="btn btn-danger" v-if="cartItems.length > 0" @click="clearCart()">清空購物車</a>
         </div>
@@ -97,25 +101,25 @@
                         {
                             id:1,
                             title: 'iPhone 12 Mini',
-                            price: '23,900',
+                            price: '23900',
                             image:'iphone-12-mini-blue-select-2020.png'
                         },
                         {
                             id:2,
                             title: 'iPhone 12',
-                            price: '26,900',
+                            price: '26900',
                             image:'iphone-12-black-select-2020.png'
                         },
                         {
                             id:3,
                             title: 'iPhone 12 Pro',
-                            price: '33,900',
+                            price: '33900',
                             image:'iphone-12-pro-blue-hero.png'
                         },
                         {
                             id:4,
                             title: 'iPhone 12 Pro Max',
-                            price: '37,900',
+                            price: '37900',
                             image: 'iphone-12-pro-max-gold-hero.png'
 
                         },
@@ -133,6 +137,22 @@
                 },
                 removeCartItem(idx){
                     this.cartItems.splice(idx,1);
+                }
+            },
+            computed:{
+                cartPriceArray(){
+                    // return this.cartItems.map(data => data.price);
+                    // return this.cartItems.map(function(data){
+                    //     return data.price;
+                    // })
+                    if(this.cartItems.length === 0){
+                        return [0]
+                    }else{
+                        return this.cartItems.map(data => data.price);
+                    }
+                },
+                cartPriceTotal(){
+                    return this.cartPriceArray.reduce((a,b)=>parseInt(a)+parseInt(b));
                 }
             }
         }).mount('#app');
