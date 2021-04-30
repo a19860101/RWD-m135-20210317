@@ -58,11 +58,13 @@
         </div>
         <div class="cartItems">
             <h3>購物車</h3>
-            <div v-for="(cartItem,idx) in cartItems" class="d-flex align-items-center">
+            <div v-for="(cartItem,idx) in cartItems" class="d-flex align-items-center px-5">
+                <button class="btn btn-danger btn-sm" @click="removeCartItem(idx)">移除</button>
                 <img :src="`images/${cartItem.image}`" width="80">
                 <h4>{{cartItem.title}}</h4>
                 <div class="ms-auto">${{cartItem.price}}</div>
             </div>
+            <hr>
             <a href="javascript:;" class="btn btn-danger" v-if="cartItems.length > 0" @click="clearCart()">清空購物車</a>
         </div>
     </div>
@@ -108,6 +110,9 @@
                 },
                 clearCart(){
                     this.cartItems.length = 0;
+                },
+                removeCartItem(idx){
+                    this.cartItems.splice(idx,1);
                 }
             }
         }).mount('#app');
