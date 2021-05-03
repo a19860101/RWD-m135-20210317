@@ -76,10 +76,9 @@
 
 <body>
     <div id="app">
-        <app-nav :cart-items="cartItems" :isCartOpen="isCartOpen"></app-nav>
-        {{cartItems}}
+        <app-nav :cart-items="cartItems" @is-open="isOpen"></app-nav>
         <app-products :products="products" @add-to-cart="addToCart"></app-products>
-        <app-cart-items></app-cart-items>
+        <app-cart-items :cart-items="cartItems"></app-cart-items>
     </div>
     <template id="app-nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -106,7 +105,7 @@
                     </ul>
                     <div class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link cart" @click="isCartOpen = true">
+                            <a href="#" class="nav-link cart" @click="isOpen()">
                                 <i class="fas fa-shopping-cart fa-lg"></i>
                                 <span class="cartItemNum">
                                     {{cartItems.length}}
@@ -131,10 +130,10 @@
         </div>
     </template>
     <template id="app-cart-items">
-        <div class="cartItems" :class="{active:isCartOpen}">
+        <div class="cartItems active" :class="{active:isCartOpen}">
             <div class="cartItems-overlay"></div>
             <div class="cartItems-container">
-            <i class="fas fa-times-circle fa-2x cartItems-close" @click="isCartOpen = false"></i>
+            <i class="fas fa-times-circle fa-2x cartItems-close" @click="isOpen()"></i>
             <h3>購物車</h3>
                 <div v-for="(cartItem,idx) in cartItems" class="d-flex align-items-center">
                     <button class="btn btn-danger btn-sm" @click="removeCartItem(idx)">移除</button>
@@ -194,6 +193,9 @@
                 },
                 removeCartItem(idx){
                     this.cartItems.splice(idx,1);
+                },
+                isOpen(){
+                    this.isCartOpen = !this.isCartOpen;
                 }
             },
             computed:{
@@ -214,7 +216,8 @@
             }
         })
         app.component('app-cart-items',{
-            template: '#app-cart-items'
+            template: '#app-cart-items',
+            props:['cart-itmes']
         });
         app.component('app-products',{
             template: '#app-products',
@@ -227,7 +230,12 @@
         });
         app.component('app-nav',{
             template: '#app-nav',
-            props:['cart-items','isCartOpen']
+            props:['cart-items'],
+            methods:{
+                isOpen(){
+                    this.$emit('is-open');
+                }
+            }
         })
         app.mount('#app');
 
