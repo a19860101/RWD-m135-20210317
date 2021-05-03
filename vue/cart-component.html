@@ -76,7 +76,7 @@
 
 <body>
     <div id="app">
-        <!-- <app-nav></app-nav> -->
+        <app-nav :cart-items="cartItems"></app-nav>
         <app-products :products="products"></app-products>
         <!-- <app-cart-items></app-cart-items> -->
     </div>
@@ -219,7 +219,8 @@
             props:['products']
         });
         app.component('app-nav',{
-            template: '#app-nav'
+            template: '#app-nav',
+            props:['cart-items']
         })
         app.mount('#app');
 
