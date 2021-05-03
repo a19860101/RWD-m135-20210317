@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>  
+</head>
+<body>
+    <div id="app">
+        <h1>{{num}}</h1>
+        <app-btn-2 @add-num="addNum"></app-btn-2>
+        <app-btn></app-btn>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    // title: 'asdf'
+                    num: 0
+                }
+            },
+            methods:{
+                addNum(){
+                    this.num += 1
+                }
+            }
+        })
+        app.component('app-title',{
+            template: `<h1>{{title}}</h1>`,
+            data(){
+                return {
+                    title: 'HELLO VUE!!'
+                }
+            }
+        })
+        app.component('app-btn-2',{
+            template: `
+                <button @click="addNum()">CLICK 2</button>
+            `,
+            methods:{
+                addNum(){
+                    this.$emit('add-num');
+                    // this.$emit('addNum');
+                }
+            }
+        })
+        app.component('app-btn',{
+            template: `
+                <button @click="add()">CLICK</button>
+                <h1>{{num}}</h1>
+            `,
+            data(){
+                return {
+                    num:0
+                }
+            },
+            methods:{
+                add(){
+                    this.num += 1;
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>
