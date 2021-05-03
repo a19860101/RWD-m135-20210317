@@ -76,9 +76,9 @@
 
 <body>
     <div id="app">
-        <app-nav></app-nav>
-        <app-products></app-products>
-        <app-cart-items></app-cart-items>
+        <!-- <app-nav></app-nav> -->
+        <app-products :products="products"></app-products>
+        <!-- <app-cart-items></app-cart-items> -->
     </div>
     <template id="app-nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -215,7 +215,8 @@
             template: '#app-cart-items'
         });
         app.component('app-products',{
-            template: '#app-products'
+            template: '#app-products',
+            props:['products']
         });
         app.component('app-nav',{
             template: '#app-nav'
