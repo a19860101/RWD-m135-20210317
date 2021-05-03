@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .cart {
+            position: relative;
+        }
+        .cartItemNum{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #f00;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            right: -10px;
+            top: -5px;
+            font-size: 14px;
+        }
+        .cartItems {
+            /* position: relative; */
+            /* display: none; */
+        }
+        /* .cartItems.active {
+            display: block;
+        } */
+        .cartItems .cartItems-container {
+            position: fixed;
+            background-color: #fff;
+            width: 500px;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            padding: 30px;
+
+            transform: translateX(500px);
+            transition: .5s;
+        }
+        .cartItems.active .cartItems-container{
+            transform: translateX(0);
+            z-index: 15;
+        }
+        .cartItems .cartItems-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            /* z-index: 10; */
+
+            transition: .5s;
+            transform: translateX(100%);
+        }
+        .cartItems.active  .cartItems-overlay {
+            background-color: rgba(0,0,0,.8);
+            /* z-index: 10; */
+            transform: translateX(0);
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <app-nav></app-nav>
+        <app-products></app-products>
+        <app-cart-items></app-cart-items>
+    </div>
+    <template id="app-nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link cart" @click="isCartOpen = true">
+                                <i class="fas fa-shopping-cart fa-lg"></i>
+                                <span class="cartItemNum">
+                                    {{cartItems.length}}
+                                </span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </template>
+    <template id="app-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6" v-for="(product,idx) in products">
+                    <img :src="`images/${product.image}`" class="w-100">
+                    <h3>{{product.title}}</h3>
+                    <div>${{product.price}}</div>
+                    <a href="javascript:;" class="btn btn-primary" @click="addToCart(idx)">加入購物車</a>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="app-cart-items">
+        <div class="cartItems" :class="{active:isCartOpen}">
+            <div class="cartItems-overlay"></div>
+            <div class="cartItems-container">
+            <i class="fas fa-times-circle fa-2x cartItems-close" @click="isCartOpen = false"></i>
+            <h3>購物車</h3>
+                <div v-for="(cartItem,idx) in cartItems" class="d-flex align-items-center">
+                    <button class="btn btn-danger btn-sm" @click="removeCartItem(idx)">移除</button>
+                    <img :src="`images/${cartItem.image}`" width="80">
+                    <h4>{{cartItem.title}}</h4>
+                    <div class="ms-auto">${{cartItem.price}}</div>
+                </div>
+                <div class="text-end">總金額: ${{cartPriceTotal}}</div>
+                <hr>
+                <a href="javascript:;" class="btn btn-danger" v-if="cartItems.length > 0" @click="clearCart()">清空購物車</a>
+            </div>
+        </div>
+    </template>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    products:[
+                        {
+                            id:1,
+                            title: 'iPhone 12 Mini',
+                            price: '23900',
+                            image:'iphone-12-mini-blue-select-2020.png'
+                        },
+                        {
+                            id:2,
+                            title: 'iPhone 12',
+                            price: '26900',
+                            image:'iphone-12-black-select-2020.png'
+                        },
+                        {
+                            id:3,
+                            title: 'iPhone 12 Pro',
+                            price: '33900',
+                            image:'iphone-12-pro-blue-hero.png'
+                        },
+                        {
+                            id:4,
+                            title: 'iPhone 12 Pro Max',
+                            price: '37900',
+                            image: 'iphone-12-pro-max-gold-hero.png'
+
+                        },
+                    ],
+                    cartItems:[],
+                    isCartOpen: false
+                }
+
+            },
+            methods:{
+                addToCart(idx){
+                    this.cartItems.push(this.products[idx]);
+                },
+                clearCart(){
+                    this.cartItems.length = 0;
+                },
+                removeCartItem(idx){
+                    this.cartItems.splice(idx,1);
+                }
+            },
+            computed:{
+                cartPriceArray(){
+                    // return this.cartItems.map(data => data.price);
+                    // return this.cartItems.map(function(data){
+                    //     return data.price;
+                    // })
+                    if(this.cartItems.length === 0){
+                        return [0]
+                    }else{
+                        return this.cartItems.map(data => data.price);
+                    }
+                },
+                cartPriceTotal(){
+                    return this.cartPriceArray.reduce((a,b)=>parseInt(a)+parseInt(b));
+                }
+            }
+        })
+        app.component('app-cart-items',{
+            template: '#app-cart-items'
+        });
+        app.component('app-products',{
+            template: '#app-products'
+        });
+        app.component('app-nav',{
+            template: '#app-nav'
+        })
+        app.mount('#app');
+
+    </script>
+</body>
+
+</html>
