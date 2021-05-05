@@ -20,6 +20,10 @@
             background-color: #ccc;
             padding: 10px;
             border-bottom: 1px solid #999;
+            transition: .4s;
+        }
+        h2.active {
+            background-color: #e04;
         }
         p {
             background-color: #ddd;
@@ -58,6 +62,7 @@
                 // $(this).next().toggle(600);
                 // $(this).next().fadeToggle(600);
                 $(this).next().slideToggle();
+                $(this).toggleClass('active');
             });
         })
     </script>
