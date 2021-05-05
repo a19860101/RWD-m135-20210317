@@ -74,7 +74,13 @@
 <body>
     <div id="app">
         <app-products :products="products" @add-to-cart="addToCart"></app-products>
-        <app-cart-items :cart-items="cartItems" :cart-price-total="cartPriceTotal" @clear-cart="clearCart" @remove-cart-item="removeCartItem"></app-cart-items>
+        <app-cart-items 
+            :is-cart-open="isCartOpen"
+            :cart-items="cartItems" 
+            :cart-price-total="cartPriceTotal"
+            @is-open="isOpen" 
+            @clear-cart="clearCart"
+            @remove-cart-item="removeCartItem"></app-cart-items>
     </div>
     <template id="app-nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -126,7 +132,7 @@
         </div>
     </template>
     <template id="app-cart-items">
-        <div class="cartItems active">
+        <div class="cartItems" :class={active:isCartOpen}>
             <div class="cartItems-overlay"></div>
             <div class="cartItems-container">
             <i class="fas fa-times-circle fa-2x cartItems-close" @click="isOpen()"></i>
@@ -187,7 +193,7 @@
                             image: 'iphone-12-pro-max-gold-hero.png'
 
                         }],
-                    isCartOpen: false
+                    isCartOpen: true
                 }
 
             },
@@ -225,13 +231,16 @@
         })
         app.component('app-cart-items',{
             template: '#app-cart-items',
-            props:['cartItems','cart-price-total'],
+            props:['cartItems','cart-price-total','is-cart-open'],
             methods:{
                 clearCart(){
                     this.$emit('clear-cart');
                 },
                 removeCartItem(idx){
                     this.$emit('remove-cart-item',idx);
+                },
+                isOpen(){
+                    this.$emit('is-open');
                 }
             }
         });
