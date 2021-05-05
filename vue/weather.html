@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>目前氣溫 {{weather.main.temp}}</h1>
+        <h2>{{weather.weather[0].description}}</h2>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    weather:''
+                }
+            },
+            created(){
+                fetch("https://api.openweathermap.org/data/2.5/weather?q=Seoul&units=metric&lang=zh_TW&appid=b1ecbccd638b763d489602917ba47cc3")
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                    this.weather = data;
+                })
+            }
+        }).mount('#app')
+
+    </script>
+</body>
+</html>
