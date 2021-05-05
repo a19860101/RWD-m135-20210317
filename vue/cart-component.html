@@ -67,18 +67,14 @@
             /* z-index: 10; */
             transform: translateX(0);
         }
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
+
     </style>
 </head>
 
 <body>
     <div id="app">
-        <app-nav :cart-items="cartItems" @is-open="isOpen"></app-nav>
         <app-products :products="products" @add-to-cart="addToCart"></app-products>
-        <app-cart-items :cart-items="cartItems"></app-cart-items>
+        <app-cart-items :cart-items="cartItems" :cart-price-total="cartPriceTotal" @clear-cart="clearCart" @remove-cart-item="removeCartItem"></app-cart-items>
     </div>
     <template id="app-nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -130,7 +126,7 @@
         </div>
     </template>
     <template id="app-cart-items">
-        <div class="cartItems active" :class="{active:isCartOpen}">
+        <div class="cartItems active">
             <div class="cartItems-overlay"></div>
             <div class="cartItems-container">
             <i class="fas fa-times-circle fa-2x cartItems-close" @click="isOpen()"></i>
@@ -178,7 +174,19 @@
 
                         },
                     ],
-                    cartItems:[],
+                    cartItems:[ {
+                            id:3,
+                            title: 'iPhone 12 Pro',
+                            price: '33900',
+                            image:'iphone-12-pro-blue-hero.png'
+                        },
+                        {
+                            id:4,
+                            title: 'iPhone 12 Pro Max',
+                            price: '37900',
+                            image: 'iphone-12-pro-max-gold-hero.png'
+
+                        }],
                     isCartOpen: false
                 }
 
@@ -217,7 +225,15 @@
         })
         app.component('app-cart-items',{
             template: '#app-cart-items',
-            props:['cart-itmes']
+            props:['cartItems','cart-price-total'],
+            methods:{
+                clearCart(){
+                    this.$emit('clear-cart');
+                },
+                removeCartItem(idx){
+                    this.$emit('remove-cart-item',idx);
+                }
+            }
         });
         app.component('app-products',{
             template: '#app-products',
@@ -230,12 +246,6 @@
         });
         app.component('app-nav',{
             template: '#app-nav',
-            props:['cart-items'],
-            methods:{
-                isOpen(){
-                    this.$emit('is-open');
-                }
-            }
         })
         app.mount('#app');
 
