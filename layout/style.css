@@ -35,7 +35,21 @@ nav .collapse a:hover::after {
 nav .collapse {
     display: none;
 }
+nav .collapse.active{
+    display: block;
+}
+
+.nav-toggle {
+    display: inline-block;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
 @media(min-width: 768px){
+    .nav-toggle {
+        display: none;
+    }
     nav {
         height: 60px;
         background-color: #222;

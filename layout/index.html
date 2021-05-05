@@ -11,204 +11,209 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="w-100">
-        <a href="#" class="nav-logo">LOGO</a>
-        <div class="collapse">
-            <a href="#" class="nav-link">MENU 1</a>
-            <a href="#" class="nav-link">MENU 2</a>
-            <a href="#" class="nav-link">MENU 3</a>
-            <a href="#" class="nav-link">MENU 4</a>
-            <a href="#" class="nav-link">MENU 5</a>
-        </div>
-    </nav>
-    <header class="w-100">
-        <div class="container row justify-content-center align-items-center">
-            <div class="col-8 t-center fadeIn">
-                <h1>RWD Design 123</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates doloremque, exercitationem quis obcaecati soluta minus.</p>
-                <a href="#">More</a>
+    <div id="app">
+        <nav class="w-100">
+            <a href="#" class="nav-logo">LOGO</a>
+            <i class="fa fa-bars nav-toggle"></i>
+            <div class="collapse">
+                <a href="#" class="nav-link">MENU 1</a>
+                <a href="#" class="nav-link">MENU 2</a>
+                <a href="#" class="nav-link">MENU 3</a>
+                <a href="#" class="nav-link">MENU 4</a>
+                <a href="#" class="nav-link">MENU 5</a>
+            </div>
+        </nav>
+        <header class="w-100">
+            <div class="container row justify-content-center align-items-center">
+                <div class="col-8 t-center fadeIn">
+                    <h1>{{title}}</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates doloremque, exercitationem quis obcaecati soluta minus.</p>
+                    <a href="#">More</a>
+                </div>
+            </div>
+        </header>
+        <div id="about">
+            <div class="container row">
+                <div class="col-12 section-title t-md-center t-left">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, nobis.</p>
+                </div>
+                <div class="col-md-4 col-12 about-content t-center my-5 my-md-0">
+                    <i class="fas fa-brain fa-7x"></i>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores cupiditate iure sequi magni magnam nemo quaerat aperiam debitis expedita!
+                    </p>
+                    <a href="#" class="btn btn-orange">Link</a>
+                </div>
+                <div class="col-md-4 col-12 about-content t-center my-5 my-md-0">
+                    <i class="far fa-lightbulb fa-7x"></i>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores cupiditate iure sequi magni magnam nemo quaerat aperiam debitis expedita!
+                    </p>
+                    <a href="#" class="btn btn-dark">Link</a>
+                </div>
+                <div class="col-md-4 col-12 about-content t-center my-5 my-md-0">
+                    <i class="fas fa-flask fa-7x"></i>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores cupiditate iure sequi magni magnam nemo quaerat aperiam debitis expedita!
+                    </p>
+                    <a href="#" class="btn btn-blue">Link</a>
+                </div>
             </div>
         </div>
-    </header>
-    <div id="about">
-        <div class="container row">
-            <div class="col-12 section-title t-md-center t-left">
-                <h2>About</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, nobis.</p>
+        <div id="service">
+            <div class="container row align-items-center">
+                <div class="col-12 section-title t-md-center t-left">
+                    <h2>Service</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, nobis.</p>
+                </div>
+                <div class="col-md-6 col-12">
+                    <img src="https://picsum.photos/id/36/800/600" alt="">
+                </div>
+                <div class="col-md-6 col-12">
+                    <h3>title</h3>
+                    <p class="my-3">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias omnis fuga laboriosam doloremque tempore dicta nam, sunt asperiores sint consequuntur ipsum illum assumenda quod animi voluptate facilis mollitia aliquam ad.
+                    </p>
+                    <a href="#" class="btn btn-blue">More</a>
+                </div>
+                <div class="col-md-6 col-12 push-md-6">
+                    <img src="https://picsum.photos/id/16/800/600" alt="">
+                </div>
+                <div class="col-md-6 col-12 pull-md-6">
+                    <h3>title</h3>
+                    <p class="my-3">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias omnis fuga laboriosam doloremque tempore dicta nam, sunt asperiores sint consequuntur ipsum illum assumenda quod animi voluptate facilis mollitia aliquam ad.
+                    </p>
+                    <a href="#" class="btn btn-blue">More</a>
+                </div>
+                
+                <div class="col-md-6 col-12">
+                    <img src="https://picsum.photos/id/26/800/600" alt="">
+                </div>
+                <div class="col-md-6 col-12">
+                    <h3>title</h3>
+                    <p class="my-3">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias omnis fuga laboriosam doloremque tempore dicta nam, sunt asperiores sint consequuntur ipsum illum assumenda quod animi voluptate facilis mollitia aliquam ad.
+                    </p>
+                    <a href="#" class="btn btn-blue">More</a>
+                </div>
             </div>
-            <div class="col-md-4 col-12 about-content t-center my-5 my-md-0">
-                <i class="fas fa-brain fa-7x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores cupiditate iure sequi magni magnam nemo quaerat aperiam debitis expedita!
-                </p>
-                <a href="#" class="btn btn-orange">Link</a>
+        </div>
+        <div id="products" class="row no-padding">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/65/800/600" alt=""></a>
             </div>
-            <div class="col-md-4 col-12 about-content t-center my-5 my-md-0">
-                <i class="far fa-lightbulb fa-7x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores cupiditate iure sequi magni magnam nemo quaerat aperiam debitis expedita!
-                </p>
-                <a href="#" class="btn btn-dark">Link</a>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/66/800/600" alt=""></a>
             </div>
-            <div class="col-md-4 col-12 about-content t-center my-5 my-md-0">
-                <i class="fas fa-flask fa-7x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores cupiditate iure sequi magni magnam nemo quaerat aperiam debitis expedita!
-                </p>
-                <a href="#" class="btn btn-blue">Link</a>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/67/800/600" alt=""></a>
             </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/68/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/69/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/70/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/71/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/72/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/73/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/74/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/75/800/600" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <a href="#"><img src="https://picsum.photos/id/76/800/600" alt=""></a>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container row align-items-center">
+                <div class="col-12 section-title t-md-center t-left">
+                    <h2>Contact</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, nobis.</p>
+                </div>
+                <div class="col-md-6 col-12">
+                    <form action="">
+                        <div>
+                            <label for="name" class="my-2">姓名</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div>
+                            <label for="phone" class="my-2">電話</label>
+                            <input type="text" id="phone">
+                        </div>
+                        <div>
+                            <label for="mail" class="my-2">Email</label>
+                            <input type="text" id="mail">
+                        </div>
+                        <div>
+                            <label for="content" class="my-2">內容</label>
+                            <textarea id="content" cols="30" rows="10"></textarea>
+                        </div>
+                        <input type="submit" value="送出" class="btn btn-blue">
+                    </form>
+                </div>
+                <div class="col-md-6 col-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.303137921788!2d121.51528465817897!3d25.047432375960348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1617767328632!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <ul>
+                        <li><a href="#">list 1</a></li>
+                        <li><a href="#">list 2</a></li>
+                        <li><a href="#">list 3</a></li>
+                        <li><a href="#">list 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <ul>
+                        <li><a href="#">list 1</a></li>
+                        <li><a href="#">list 2</a></li>
+                        <li><a href="#">list 3</a></li>
+                        <li><a href="#">list 4</a></li>
+                        <li><a href="#">list 5</a></li>
+                        <li><a href="#">list 6</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <ul>
+                        <li><a href="#">list 1</a></li>
+                        <li><a href="#">list 2</a></li>
+                        <li><a href="#">list 3</a></li>
+                        <li><a href="#">list 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <ul>
+                        <li><a href="#">list 1</a></li>
+                        <li><a href="#">list 2</a></li>
+                        <li><a href="#">list 3</a></li>
+                        <li><a href="#">list 4</a></li>
+                        <li><a href="#">list 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div id="copyright">
+            <div class="t-center py-3">COPYRIGHTS &copy; 2021 Gjun</div>
         </div>
     </div>
-    <div id="service">
-        <div class="container row align-items-center">
-            <div class="col-12 section-title t-md-center t-left">
-                <h2>Service</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, nobis.</p>
-            </div>
-            <div class="col-md-6 col-12">
-                <img src="https://picsum.photos/id/36/800/600" alt="">
-            </div>
-            <div class="col-md-6 col-12">
-                <h3>title</h3>
-                <p class="my-3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias omnis fuga laboriosam doloremque tempore dicta nam, sunt asperiores sint consequuntur ipsum illum assumenda quod animi voluptate facilis mollitia aliquam ad.
-                </p>
-                <a href="#" class="btn btn-blue">More</a>
-            </div>
-            <div class="col-md-6 col-12 push-md-6">
-                <img src="https://picsum.photos/id/16/800/600" alt="">
-            </div>
-            <div class="col-md-6 col-12 pull-md-6">
-                <h3>title</h3>
-                <p class="my-3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias omnis fuga laboriosam doloremque tempore dicta nam, sunt asperiores sint consequuntur ipsum illum assumenda quod animi voluptate facilis mollitia aliquam ad.
-                </p>
-                <a href="#" class="btn btn-blue">More</a>
-            </div>
-            
-            <div class="col-md-6 col-12">
-                <img src="https://picsum.photos/id/26/800/600" alt="">
-            </div>
-            <div class="col-md-6 col-12">
-                <h3>title</h3>
-                <p class="my-3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias omnis fuga laboriosam doloremque tempore dicta nam, sunt asperiores sint consequuntur ipsum illum assumenda quod animi voluptate facilis mollitia aliquam ad.
-                </p>
-                <a href="#" class="btn btn-blue">More</a>
-            </div>
-        </div>
-    </div>
-    <div id="products" class="row no-padding">
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/65/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/66/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/67/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/68/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/69/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/70/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/71/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/72/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/73/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/74/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/75/800/600" alt=""></a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <a href="#"><img src="https://picsum.photos/id/76/800/600" alt=""></a>
-        </div>
-    </div>
-    <div id="contact">
-        <div class="container row align-items-center">
-            <div class="col-12 section-title t-md-center t-left">
-                <h2>Contact</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, nobis.</p>
-            </div>
-            <div class="col-md-6 col-12">
-                <form action="">
-                    <div>
-                        <label for="name" class="my-2">姓名</label>
-                        <input type="text" id="name">
-                    </div>
-                    <div>
-                        <label for="phone" class="my-2">電話</label>
-                        <input type="text" id="phone">
-                    </div>
-                    <div>
-                        <label for="mail" class="my-2">Email</label>
-                        <input type="text" id="mail">
-                    </div>
-                    <div>
-                        <label for="content" class="my-2">內容</label>
-                        <textarea id="content" cols="30" rows="10"></textarea>
-                    </div>
-                    <input type="submit" value="送出" class="btn btn-blue">
-                </form>
-            </div>
-            <div class="col-md-6 col-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.303137921788!2d121.51528465817897!3d25.047432375960348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e339109%3A0xc34a31ce3a4abecb!2z6Ie65YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1617767328632!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="container row">
-            <div class="col-lg-3 col-sm-6 col-12">
-                <ul>
-                    <li><a href="#">list 1</a></li>
-                    <li><a href="#">list 2</a></li>
-                    <li><a href="#">list 3</a></li>
-                    <li><a href="#">list 4</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <ul>
-                    <li><a href="#">list 1</a></li>
-                    <li><a href="#">list 2</a></li>
-                    <li><a href="#">list 3</a></li>
-                    <li><a href="#">list 4</a></li>
-                    <li><a href="#">list 5</a></li>
-                    <li><a href="#">list 6</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <ul>
-                    <li><a href="#">list 1</a></li>
-                    <li><a href="#">list 2</a></li>
-                    <li><a href="#">list 3</a></li>
-                    <li><a href="#">list 4</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <ul>
-                    <li><a href="#">list 1</a></li>
-                    <li><a href="#">list 2</a></li>
-                    <li><a href="#">list 3</a></li>
-                    <li><a href="#">list 4</a></li>
-                    <li><a href="#">list 5</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <div id="copyright">
-        <div class="t-center py-3">COPYRIGHTS &copy; 2021 Gjun</div>
-    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
 </body>
 </html>
