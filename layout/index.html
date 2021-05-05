@@ -14,8 +14,8 @@
     <div id="app">
         <nav class="w-100">
             <a href="#" class="nav-logo">LOGO</a>
-            <i class="fa fa-bars nav-toggle"></i>
-            <div class="collapse">
+            <i class="fa fa-bars nav-toggle" @click="isOpen = !isOpen"></i>
+            <div class="collapse" :class="{active:isOpen}">
                 <a href="#" class="nav-link">MENU 1</a>
                 <a href="#" class="nav-link">MENU 2</a>
                 <a href="#" class="nav-link">MENU 3</a>
