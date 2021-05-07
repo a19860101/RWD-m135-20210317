@@ -56,7 +56,6 @@
             background-color: #ffaaa7;
         }
         #gotop {
-            display: block;
             width: 50px;
             height: 50px;
             background-color: #222;
@@ -67,6 +66,7 @@
             text-decoration: none;
             line-height: 50px;
             text-align: center;
+            display: none;
         }
     </style>
 </head>
@@ -106,6 +106,16 @@
                     scrollTop: 0
                 })
             })
+            $(window).scroll(function(){
+                let h = $(window).scrollTop();
+                if(h > 600){
+                    // $('#gotop').show();
+                    $('#gotop').fadeIn();
+                }else{
+                    // $('#gotop').hide();
+                    $('#gotop').fadeOut();
+                }
+            });
         })
     </script>
 </body>
