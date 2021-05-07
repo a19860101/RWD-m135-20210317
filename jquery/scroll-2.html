@@ -55,6 +55,19 @@
         #contact {
             background-color: #ffaaa7;
         }
+        #gotop {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            color: #fff;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            text-decoration: none;
+            line-height: 50px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +89,7 @@
     <div id="contact">
         <h1>Contact</h1>
     </div>
+    <a href="#" id="gotop">TOP</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
@@ -85,6 +99,11 @@
                 let offset = $(scroll).offset().top;
                 $('html,body').animate({
                     scrollTop: offset
+                })
+            })
+            $('#gotop').click(()=>{
+                $('html,body').animate({
+                    scrollTop: 0
                 })
             })
         })
