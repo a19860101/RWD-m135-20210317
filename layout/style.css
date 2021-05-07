@@ -33,14 +33,14 @@ nav .collapse a:hover::after {
 }
 
 nav .collapse {
-    /* display: none; */
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
+    display: none;
+    /* width: 100%; */
+    /* max-height: 0; */
+    /* overflow: hidden; */
 }
 nav .collapse.active{
-    /* display: block; */
-    max-height: 100%;
+    display: block;
+    /* max-height: 100%; */
 }
 
 .nav-toggle {

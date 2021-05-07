@@ -5,22 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWD LAYOUT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" integrity="sha512-b42SanD3pNHoihKwgABd18JUZ2g9j423/frxIP5/gtYgfBz/0nDHGdY/3hi+3JwhSckM3JLklQ/T6tJmV7mZEw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="grid.css">
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
     <div id="app">
         <nav class="w-100">
             <a href="#" class="nav-logo">LOGO</a>
-            <i class="fa fa-bars nav-toggle" @click="isOpen = !isOpen"></i>
-            <div class="collapse" :class="{active:isOpen}">
-                <a href="#" class="nav-link">MENU 1</a>
-                <a href="#" class="nav-link">MENU 2</a>
-                <a href="#" class="nav-link">MENU 3</a>
-                <a href="#" class="nav-link">MENU 4</a>
-                <a href="#" class="nav-link">MENU 5</a>
+            <i class="fa fa-bars nav-toggle"></i>
+            <div class="collapse acitve">
+                <a href="#" data-scroll="#top" class="nav-link">Home</a>
+                <a href="#" data-scroll="#about" class="nav-link">About</a>
+                <a href="#" data-scroll="#service" class="nav-link">Service</a>
+                <a href="#" data-scroll="#products" class="nav-link">Product</a>
+                <a href="#" data-scroll="#contact" class="nav-link">Contact</a>
             </div>
         </nav>
         <header class="w-100">
@@ -214,6 +215,8 @@
         </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
