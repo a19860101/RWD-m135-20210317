@@ -7,7 +7,7 @@ Vue.createApp({
         }
     }
 }).mount('#app');
-
+new WOW().init();
 $(function(){
     $('.collapse').find('a').click(function(){
         let scroll = $(this).data('scroll');
