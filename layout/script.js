@@ -37,4 +37,7 @@ $(function(){
             $('#gotop').removeClass(_in).addClass(`animated ${_out}`)
         }
     });
+    $('.nav-toggle').click(function(){
+        $('.collapse').slideToggle();
+    })
 })
