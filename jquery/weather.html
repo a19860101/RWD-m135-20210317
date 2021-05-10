@@ -19,7 +19,7 @@
             $.ajax({
                 url:'https://api.openweathermap.org/data/2.5/forecast',
                 data: {
-                    q: 'Taipei',
+                    q: 'Tokyo',
                     appid: 'b1ecbccd638b763d489602917ba47cc3',
                     cnt: 40,
                     units: 'metric',
@@ -43,6 +43,7 @@
                         console.log(hours,minutes,seconds);
                         let content = `
                             <div>
+                                <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
                                 <h2>${year}-${month}-${date}-(${day_tw[day]}) - ${hours}時</h2>
                                 <h2>${data.main.temp} 體感溫度 ${data.main.feels_like}<h2>
                                 <div>最高溫 ${data.main.temp_max} 最低溫 ${data.main.temp_min}</div>
