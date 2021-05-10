@@ -40,4 +40,13 @@ $(function(){
     $('.nav-toggle').click(function(){
         $('.collapse').slideToggle();
     })
+    $(window).resize(function(){
+        let w = $(window).width();
+        console.log(w);
+        if(w > 768){
+            $('.collapse').show();
+        }else{
+            $('.collapse').hide();
+        }
+    })
 })
