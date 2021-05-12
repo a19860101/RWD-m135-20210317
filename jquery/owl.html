@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css" integrity="sha512-C8Movfk6DU/H5PzarG0+Dv9MA9IZzvmQpO/3cIlGIflmtY3vIud07myMu4M/NTPJl8jmZtt/4mC9bAioMZBBdA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <style>
+        #banner {
+            width: 1200px;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div class="owl-theme owl-carousel" id="slider">
+            <img src="https://picsum.photos/id/33/1200/600" alt="">
+            <img src="https://picsum.photos/id/34/1200/600" alt="">
+            <img src="https://picsum.photos/id/35/1200/600" alt="">
+            <img src="https://picsum.photos/id/36/1200/600" alt="">
+            <img src="https://picsum.photos/id/37/1200/600" alt="">
+            <img src="https://picsum.photos/id/38/1200/600" alt="">
+        </div>
+    </div>
+    <div id="ad">
+        <div class="owl-theme owl-carousel" id="ad_slider">
+            <img src="https://picsum.photos/id/41/400" alt="">
+            <img src="https://picsum.photos/id/42/400" alt="">
+            <img src="https://picsum.photos/id/43/400" alt="">
+            <img src="https://picsum.photos/id/44/400" alt="">
+            <img src="https://picsum.photos/id/45/400" alt="">
+            <img src="https://picsum.photos/id/46/400" alt="">
+            <img src="https://picsum.photos/id/47/400" alt="">
+            <img src="https://picsum.photos/id/48/400" alt="">
+            <img src="https://picsum.photos/id/49/400" alt="">
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('#slider').owlCarousel({
+                items: 1,
+                autoplay: true,
+                loop: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1200,
+                dots: true,
+                dotsSpeed: 1200,
+                nav: true,
+                navText:['<i class="fas fa-chevron-circle-left fa-2x"></i>','<i class="fas fa-chevron-circle-right fa-2x"></i>'],
+                navSpeed: 1200,
+                center: true,
+                stagePadding: 200
+            });
+            $('#ad_slider').owlCarousel({
+                items:5,
+                margin:10
+            })
+        })
+    </script>
+</body>
+</html>
