@@ -9,44 +9,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+   
     <style>
-        body {
-            background-color: #04a2fd;
-        }
         #banner {
             width: 1200px;
             margin: auto;
         }
         img {
             width: 100%;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
-    <div id="banner">
-        <div id="slider">
-            <img src="https://picsum.photos/id/33/1200/600" alt="">
-            <img src="https://picsum.photos/id/34/1200/600" alt="">
-            <img src="https://picsum.photos/id/35/1200/600" alt="">
-            <img src="https://picsum.photos/id/36/1200/600" alt="">
-            <img src="https://picsum.photos/id/37/1200/600" alt="">
-            <img src="https://picsum.photos/id/38/1200/600" alt="">
+    <div id="ad">
+        <div class="owl-theme owl-carousel" id="ad_slider">
+            <img src="https://picsum.photos/id/41/400" alt="">
+            <img src="https://picsum.photos/id/42/400" alt="">
+            <img src="https://picsum.photos/id/43/400" alt="">
+            <img src="https://picsum.photos/id/44/400" alt="">
+            <img src="https://picsum.photos/id/45/400" alt="">
+            <img src="https://picsum.photos/id/46/400" alt="">
+            <img src="https://picsum.photos/id/47/400" alt="">
+            <img src="https://picsum.photos/id/48/400" alt="">
+            <img src="https://picsum.photos/id/49/400" alt="">
+            <img src="https://picsum.photos/id/50/400" alt="">
+            <img src="https://picsum.photos/id/51/400" alt="">
+            <img src="https://picsum.photos/id/52/400" alt="">
+            <img src="https://picsum.photos/id/53/400" alt="">
+            <img src="https://picsum.photos/id/54/400" alt="">
+            <img src="https://picsum.photos/id/55/400" alt="">
+            <img src="https://picsum.photos/id/56/400" alt="">
         </div>
     </div>
     <script>
         $(function(){
-            $('#slider').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                speed: 1200,
-                dots: true,
-                arrows: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerMode: true,
-                centerPadding: '160px',
-                fade:true
-            });
+            $('#ad_slider').slick({
+                slidesToShow:6 ,
+                dots: true
+            })
         })
     </script>
 </body>
