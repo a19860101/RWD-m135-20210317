@@ -44,8 +44,26 @@
     <script>
         $(function(){
             $('#ad_slider').owlCarousel({
-                items:5,
-                margin:10
+                items:6,
+                margin:10,
+                dots: false,
+                responsive:{
+                    0: {
+                        items:2,
+                        
+                    },
+                    480:{
+                        items: 4
+                    },
+                    768: {
+                        items: 5,
+                        dots: true
+                    },
+                    1200:{
+                        items: 6,
+                        dots: true
+                    }
+                }
             })
         })
     </script>
