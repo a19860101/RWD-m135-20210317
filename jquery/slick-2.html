@@ -37,16 +37,34 @@
             <img src="https://picsum.photos/id/51/400" alt="">
             <img src="https://picsum.photos/id/52/400" alt="">
             <img src="https://picsum.photos/id/53/400" alt="">
-            <img src="https://picsum.photos/id/54/400" alt="">
-            <img src="https://picsum.photos/id/55/400" alt="">
-            <img src="https://picsum.photos/id/56/400" alt="">
         </div>
     </div>
     <script>
         $(function(){
             $('#ad_slider').slick({
                 slidesToShow:6 ,
-                dots: true
+                dots: true,
+                responsive:[
+                    {
+                        breakpoint:1200,
+                        settings:{
+                            slidesToShow: 5
+                        }
+                    },
+                    {
+                        breakpoint:960,
+                        settings:{
+                            slidesToShow: 4
+                        }
+                    },
+
+                    {
+                        breakpoint:480,
+                        settings:{
+                            slidesToShow: 2
+                        }
+                    }
+                ]
             })
         })
     </script>
