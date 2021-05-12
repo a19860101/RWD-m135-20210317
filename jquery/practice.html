@@ -30,7 +30,9 @@
         $(function(){
             $.ajax({
                 url:'https://picsum.photos/v2/list',
-                data:{},
+                data:{
+                    limit:10
+                },
                 success(data){
                     for(let photo of data){
                         let c = `
@@ -41,6 +43,11 @@
                             </div>
                         `;
                         $('.container').append(c);
+                        $('.container').imagesLoaded(function(){
+                            $('.container').masonry({
+                                isFitWidth: true
+                            })
+                        })
                     }
                 },
                 error(){
