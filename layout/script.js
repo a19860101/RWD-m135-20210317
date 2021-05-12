@@ -49,4 +49,10 @@ $(function(){
             $('.collapse').hide();
         }
     })
+    $('header').owlCarousel({
+        // autoplay: true
+        items:1,
+        autoplay: true,
+        loop: true
+    })
 })
